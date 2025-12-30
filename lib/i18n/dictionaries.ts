@@ -270,6 +270,110 @@ export type Dictionary = {
       };
     };
   };
+  nutritionList: {
+    metadata: {
+      title: string;
+      description: string;
+    };
+    title: string;
+    description: string;
+    filters: {
+      searchPlaceholder: string;
+      clearLabel: string;
+    };
+    table: {
+      caption: string;
+      empty: string;
+      sortLabel: string;
+      columns: {
+        product: string;
+        category: string;
+        carbs: string;
+        protein: string;
+        fat: string;
+        calories: string;
+        salt: string;
+      };
+    };
+    form: {
+      title: string;
+      description: string;
+      submitLabel: string;
+      fields: {
+        name: string;
+        category: string;
+        carbs: string;
+        protein: string;
+        fat: string;
+        calories: string;
+        salt: string;
+      };
+      validation: {
+        nameRequired: string;
+        categoryRequired: string;
+        nonNegative: string;
+      };
+      zeroWarning: {
+        title: string;
+        description: string;
+        confirm: string;
+        back: string;
+        zeroPrefix: string;
+      };
+    };
+  };
+  nutritionList: {
+    metadata: {
+      title: string;
+      description: string;
+    };
+    title: string;
+    description: string;
+    filters: {
+      searchPlaceholder: string;
+      clearLabel: string;
+    };
+    table: {
+      caption: string;
+      empty: string;
+      sortLabel: string;
+      columns: {
+        product: string;
+        category: string;
+        carbs: string;
+        protein: string;
+        fat: string;
+        calories: string;
+        salt: string;
+      };
+    };
+    form: {
+      title: string;
+      description: string;
+      submitLabel: string;
+      fields: {
+        name: string;
+        category: string;
+        carbs: string;
+        protein: string;
+        fat: string;
+        calories: string;
+        salt: string;
+      };
+      validation: {
+        nameRequired: string;
+        categoryRequired: string;
+        nonNegative: string;
+      };
+      zeroWarning: {
+        title: string;
+        description: string;
+        confirm: string;
+        back: string;
+        zeroPrefix: string;
+      };
+    };
+  };
   header: {
     localeToggle: {
       label: string;
@@ -283,6 +387,7 @@ export type Dictionary = {
       links: {
         home: string;
         raci: string;
+        nutritionList: string;
         jobDescriptions: string;
         administration: string;
       };
@@ -701,6 +806,59 @@ const dictionaries: Record<Locale, Dictionary> = {
         }
       }
     },
+    nutritionList: {
+      metadata: {
+        title: 'Nutrition list — PI',
+        description: 'Review products and their nutrition facts in a sortable, filterable table.'
+      },
+      title: 'Nutrition list',
+      description: 'Browse available products and record their nutrition details.',
+      filters: {
+        searchPlaceholder: 'Filter by product or category…',
+        clearLabel: 'Reset filters'
+      },
+      table: {
+        caption: 'Available products',
+        empty: 'No products match your filters.',
+        sortLabel: 'Sort',
+        columns: {
+          product: 'Product',
+          category: 'Category',
+          carbs: 'Carbs (g)',
+          protein: 'Protein (g)',
+          fat: 'Fat (g)',
+          calories: 'Kcal',
+          salt: 'Salt (g)'
+        }
+      },
+      form: {
+        title: 'Add a product',
+        description: 'Record a product and its nutrition facts.',
+        submitLabel: 'Save product',
+        fields: {
+          name: 'Product name',
+          category: 'Category',
+          carbs: 'Carbs (g)',
+          protein: 'Protein (g)',
+          fat: 'Fat (g)',
+          calories: 'Kcal',
+          salt: 'Salt (g)'
+        },
+        validation: {
+          nameRequired: 'Product name is required.',
+          categoryRequired: 'Category is required.',
+          nonNegative: 'Values must be zero or greater.'
+        },
+        zeroWarning: {
+          title: 'Confirm zero values',
+          description:
+            'You entered zero for the fields below. Confirm to save anyway or go back to edit the product.',
+          confirm: 'Save anyway',
+          back: 'Back to edit',
+          zeroPrefix: 'Zero value:'
+        }
+      }
+    },
     header: {
       localeToggle: {
         label: 'Language',
@@ -717,6 +875,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         links: {
           home: 'Home',
           raci: 'RACI matrices',
+          nutritionList: 'Nutrition list',
           jobDescriptions: 'Job descriptions',
           administration: 'Administration'
         }
@@ -1133,6 +1292,59 @@ const dictionaries: Record<Locale, Dictionary> = {
         }
       }
     },
+    nutritionList: {
+      metadata: {
+        title: 'Liste nutritionnelle — PI',
+        description: 'Consultez les produits et leurs valeurs nutritionnelles dans un tableau filtrable et triable.'
+      },
+      title: 'Liste nutritionnelle',
+      description: 'Visualisez les produits disponibles et saisissez leurs informations nutritionnelles.',
+      filters: {
+        searchPlaceholder: 'Filtrer par produit ou catégorie…',
+        clearLabel: 'Réinitialiser le filtre'
+      },
+      table: {
+        caption: 'Produits disponibles',
+        empty: 'Aucun produit ne correspond au filtre.',
+        sortLabel: 'Trier',
+        columns: {
+          product: 'Produit',
+          category: 'Catégorie',
+          carbs: 'Glucides (g)',
+          protein: 'Protéines (g)',
+          fat: 'Lipides (g)',
+          calories: 'Kcal',
+          salt: 'Sel (g)'
+        }
+      },
+      form: {
+        title: 'Ajouter un produit',
+        description: 'Enregistrez un produit et ses valeurs nutritionnelles.',
+        submitLabel: 'Enregistrer le produit',
+        fields: {
+          name: 'Nom du produit',
+          category: 'Catégorie',
+          carbs: 'Glucides (g)',
+          protein: 'Protéines (g)',
+          fat: 'Lipides (g)',
+          calories: 'Kcal',
+          salt: 'Sel (g)'
+        },
+        validation: {
+          nameRequired: 'Le nom du produit est requis.',
+          categoryRequired: 'La catégorie est requise.',
+          nonNegative: 'Les valeurs doivent être supérieures ou égales à 0.'
+        },
+        zeroWarning: {
+          title: 'Valeurs à zéro',
+          description:
+            'Vous avez saisi 0 pour les champs ci-dessous. Confirmez pour enregistrer quand même ou revenez modifier le produit.',
+          confirm: 'Enregistrer quand même',
+          back: 'Revenir à la saisie',
+          zeroPrefix: 'Valeur à zéro :'
+        }
+      }
+    },
     header: {
       localeToggle: {
         label: 'Langue',
@@ -1149,6 +1361,7 @@ const dictionaries: Record<Locale, Dictionary> = {
         links: {
           home: 'Accueil',
           raci: 'Matrices RACI',
+          nutritionList: 'Liste nutritionnelle',
           jobDescriptions: 'Fiches de poste',
           administration: 'Administration'
         }

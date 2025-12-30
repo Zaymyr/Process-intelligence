@@ -8,6 +8,7 @@ export type NavigationLink = {
 
 export const NAVIGATION_LINKS = [
   { href: '/', labelKey: 'home' },
+  { href: '/nutrition', labelKey: 'nutritionList' },
   { href: '/raci', labelKey: 'raci' },
   { href: '/job-descriptions', labelKey: 'jobDescriptions' },
   { href: '/administration', labelKey: 'administration' }
