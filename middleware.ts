@@ -8,7 +8,23 @@ const RATE_LIMIT_MAX = 100;
 const rateLimitCache = new LRUCache<string, { count: number; expires: number }>({ max: 5000 });
 
 const securityHeaders: Record<string, string> = {
-  'Permissions-Policy': 'geolocation=()'
+  'Content-Security-Policy': [
+    "default-src 'self'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    "frame-ancestors 'none'",
+    "object-src 'none'",
+    "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self' data: blob:",
+    "font-src 'self' data:",
+    "connect-src 'self' https://*.supabase.co https://vitals.vercel-insights.com https://vercel.live",
+    'upgrade-insecure-requests'
+  ].join('; '),
+  'Permissions-Policy': 'geolocation=()',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY'
 };
 
 export function middleware(request: NextRequest) {
